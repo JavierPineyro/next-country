@@ -5,13 +5,22 @@ import Card from 'app/components/Countries/Card'
 import styles from './Countries.module.css'
 
 import { URLcountry } from 'utils'
-import { Service } from 'types'
+import { Country, Service } from 'types'
 import type { RawCountry, CountryHomePage } from 'types'
 
+type Props = {
+  countries: Array<Country> | undefined
+}
+type SectionProps = {
+  data: Country[] | CountryHomePage[]
+  service: Service
+}
+
 async function getData(): Promise<Array<CountryHomePage>> {
-  const service = 'all'
-  const response = await fetch(`${URLcountry}/${service}`)
+  const serviceFetch = Service.All
+  const response = await fetch(`${URLcountry}/${serviceFetch}`)
   const responseToJson: Array<RawCountry> = await response.json()
+
   return responseToJson.map((country) => {
     return {
       name: country.name,
@@ -27,9 +36,7 @@ async function getData(): Promise<Array<CountryHomePage>> {
   })
 }
 
-export default async function ListOfCountries() {
-  const service = Service.Name
-  const data = await getData()
+function Section({ data, service }: SectionProps) {
   return (
     <section className={styles.content}>
       {data.map((country) => (
@@ -39,4 +46,15 @@ export default async function ListOfCountries() {
       ))}
     </section>
   )
+}
+
+export default async function ListOfCountries(props: Props) {
+  const service = Service.Name
+
+  if (props.countries) {
+    return <Section data={props.countries} service={service} />
+  }
+
+  const data = await getData()
+  return <Section data={data} service={service} />
 }

@@ -1,8 +1,18 @@
 import React from 'react'
 import Button from 'app/components/Button'
-import { getCountryData } from 'utils'
-import { Service } from 'types'
+import ListOfCountries from 'app/components/Countries/ListOfCountries'
 
+import styles from './page.module.css'
+
+import { capitalizeString, URLcountry } from 'utils'
+import { Service, Country } from 'types'
+
+type DataFetch = Array<Country> | Country
+type Args = {
+  region: string
+  keyword: string
+  pageNumber: number
+}
 type Props = {
   params: {
     region: string
@@ -11,23 +21,37 @@ type Props = {
   }
 }
 
-const SERVICE_FECTH = Service.Name
+const SERVICE_FETCH = Service.Name
 
-// code fetch
-const getData = async (region: string, keyword: string, page: number) => {
-  const data = await getCountryData(keyword, SERVICE_FECTH)
-  return data
+const getData = async (args: Args): Promise<DataFetch | null> => {
+  const { region, keyword, pageNumber: page } = args
+
+  const response = await fetch(`${URLcountry}/${SERVICE_FETCH}/${keyword}`)
+  const data = await response.json()
+
+  if (!Array.isArray(data)) {
+    return null
+  }
+
+  if (region === Service.All) {
+    return data
+  } else {
+    return data.filter((country) => country.region === capitalizeString(region))
+  }
 }
 
-const SearchPage = ({ params: { region, keyword, page } }: Props) => {
+const SearchPage = async ({
+  params: { region = Service.Name, keyword, page },
+}: Props) => {
   const pageNumber = Number(page)
-  const countries = getData(region, keyword, pageNumber)
+  const countries = await getData({ region, keyword, pageNumber })
 
   return (
-    <div>
+    <main className={styles.container}>
       <Button label="Back" toPage="/" />
-      SearchPage {region + '/' + keyword}
-    </div>
+      {/* @ts-expect-error Server Component */}
+      {countries ? <ListOfCountries countries={countries} /> : 'none'}
+    </main>
   )
 }
 
