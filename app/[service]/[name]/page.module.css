@@ -1,0 +1,81 @@
+/* Layout styles */
+.container {
+  min-width: 100vw;
+  padding: 0 80px;
+}
+.buttonWrapper {
+  margin: 50px 0;
+  width: 100%;
+}
+
+/* Page styles */
+.article {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  /* max-height: 100%; */
+  object-fit: cover;
+  aspect-ratio: 8/5;
+}
+
+.wrap {
+  flex: 1;
+  padding: 0 20px 0 0;
+}
+
+.info {
+  padding: 5px 40px;
+}
+
+.title {
+  margin: 0;
+  padding: 0 0 20px 0;
+  font-size: 28px;
+  max-width: 30ch;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.itemsNativeNave {
+  max-width: 25ch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.itemLang {
+  max-width: 30ch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.columns {
+  display: flex;
+  gap: 40px;
+  margin: 0 0 40px 0;
+}
+
+.columns p {
+  margin: 8px 0;
+  font-weight: lighter;
+}
+
+.columns div p span,
+.borders span {
+  font-weight: bold;
+}
+
+.borders {
+  max-width: 50ch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
