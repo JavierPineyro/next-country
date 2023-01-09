@@ -4,10 +4,10 @@ import Image from 'next/image'
 import styles from './Countries.module.css'
 
 import { capitalizeString } from 'utils'
-import type { CountryHomePage } from 'types'
+import type { Country, CountryHomePage } from 'types'
 
 type Props = {
-  country: CountryHomePage
+  country: CountryHomePage | Country
 }
 
 function Card({ country }: Props) {

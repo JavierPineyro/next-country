@@ -8,11 +8,11 @@ type ChangeEvent = {
   selectEvent: React.ChangeEvent<HTMLSelectElement>
   submitInput: React.FormEvent<HTMLFormElement>
 }
-type selectValues = 'africa' | 'america' | 'asia' | 'europe' | 'oceania'
+type selectValues = 'africa' | 'americas' | 'asia' | 'europe' | 'oceania'
 
 const regions: selectValues[] = [
   'africa',
-  'america',
+  'americas',
   'asia',
   'europe',
   'oceania',
@@ -20,7 +20,7 @@ const regions: selectValues[] = [
 
 const SearchForm = () => {
   const [keyword, setkeyword] = useState<string>('')
-  const [region, setRegion] = useState<string>('')
+  const [region, setRegion] = useState<string>('all')
 
   const router = useRouter()
 

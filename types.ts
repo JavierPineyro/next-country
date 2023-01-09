@@ -104,6 +104,6 @@ export type CountryHomePage = Omit<
   | 'area'
 >
 
-export type Region = "africa"| "america"| "asia"| "europe"| "oceania"
+export type Region = "africa"| "americas"| "asia"| "europe"| "oceania"
 
 export type FilterRegion = Array<Region>
