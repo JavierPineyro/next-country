@@ -1,4 +1,5 @@
 import SearchForm from 'app/components/Form'
+import styles from './page.module.css'
 
 type LayoutProp = {
   children: React.ReactNode
@@ -6,9 +7,11 @@ type LayoutProp = {
 
 export default function RootLayout({ children }: LayoutProp) {
   return (
-    <div>
-      <SearchForm />
+    <main className={styles.container}>
+      <div className={styles.divForm}>
+        <SearchForm />
+      </div>
       <main>{children}</main>
-    </div>
+    </main>
   )
 }

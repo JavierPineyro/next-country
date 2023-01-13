@@ -7,6 +7,8 @@ export default function Head() {
         name="description"
         content="Search data of your favorite country!"
       />
+      <link href="/fonts/NunitoSans-SemiBold.tff" type="font/tff" 
+        rel="preload" as="font" crossOrigin='anonymous' />
       <link rel="icon" href="/favicon.ico" />
     </>
   )

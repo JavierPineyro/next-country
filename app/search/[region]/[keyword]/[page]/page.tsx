@@ -47,10 +47,8 @@ const SearchPage = async ({
 
   return (
     <main className={styles.container}>
-      <div className={styles.divForm}>
       {/* @ts-expect-error Server Component */}
       {countries ? <ListOfCountries countries={countries} /> : 'none'}
-      </div>
     </main>
   )
 }

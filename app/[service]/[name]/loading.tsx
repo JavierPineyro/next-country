@@ -1,19 +1,11 @@
-import React from 'react'
+import styles from './loading.module.css'
 
-type Props = {}
-
-function loading({}: Props) {
-  return ( <div>Cargando</div>
-    // <div className="loader">
-    //   <div className="wrapper">
-    //     <div className="circle"></div>
-    //     <div className="line-1"></div>
-    //     <div className="line-2"></div>
-    //     <div className="line-3"></div>
-    //     <div className="line-4"></div>
-    //   </div>
-    // </div>
+export default function loading() {
+  return ( 
+    <div className={styles.loader}>
+      <div className={styles.scanner}>
+        <span>Loading...</span>
+      </div>
+    </div>  
   )
 }
-
-export default loading

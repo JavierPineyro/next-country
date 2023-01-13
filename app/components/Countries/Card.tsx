@@ -19,7 +19,7 @@ function Card({ country }: Props) {
         alt={`${country.name}'s flag`}
         width={20}
         height={15}
-        priority={true}
+        loading='lazy'
       />
       <header className={styles.wrapper}>
         <h3>{country.name}</h3>

@@ -14,10 +14,16 @@ export default function RootLayout({ children }: LayoutProp) {
           <Link href="/">
             <h1>Where in the world?</h1>
           </Link>
-          <button>Theme</button>
+          <button title='Not implemented feature'>Theme</button>
         </header>
         {children}
-        <footer className="footer">Footer</footer>
+        <footer className="footer">
+          by 
+          <a title='Web App Github Repo' href='https://github.com/JavierPineyro/next-country'>
+            Javier Piñeyro 
+          </a>
+          👋
+        </footer>
       </body>
     </html>
   )
