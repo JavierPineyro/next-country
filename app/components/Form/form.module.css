@@ -1,0 +1,22 @@
+.form{
+  display: flex;
+  justify-content: space-between;
+}
+
+.textInput{
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 300px;
+  border: none;
+}
+
+.textInput:focus{
+  outline: 1px solid #ccc;
+}
+
+.selectInput{
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 300px;
+  border: none;
+}

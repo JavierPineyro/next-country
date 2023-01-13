@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from 'app/components/Button'
 import ListOfCountries from 'app/components/Countries/ListOfCountries'
 
 import styles from './page.module.css'
@@ -48,9 +47,10 @@ const SearchPage = async ({
 
   return (
     <main className={styles.container}>
-      <Button label="Back" toPage="/" />
+      <div className={styles.divForm}>
       {/* @ts-expect-error Server Component */}
       {countries ? <ListOfCountries countries={countries} /> : 'none'}
+      </div>
     </main>
   )
 }

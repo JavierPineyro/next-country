@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import styles from './form.module.css'
 
 type ChangeEvent = {
   inputEvent: React.ChangeEvent<HTMLInputElement>
@@ -37,17 +38,20 @@ const SearchForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        onChange={handleCountryChange}
-        value={keyword}
-        placeholder="Search a country ..."
-        autoComplete="off"
-        type="search"
-        name="search"
-        id="search"
-      />
+    <form className={styles.form} onSubmit={handleSubmit}>
+        <input
+          className={styles.textInput}
+          onChange={handleCountryChange}
+          value={keyword}
+          placeholder="Search for a country..."
+          autoComplete="off"
+          type="search"
+          name="search"
+          id="search"
+        />
+              
       <select
+      className={styles.selectInput}
         defaultValue={'all'}
         onChange={handleRegionChange}
         name="filter"
