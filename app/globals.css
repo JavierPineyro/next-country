@@ -91,3 +91,14 @@ h1 {
   font-weight: bold;
   margin: 0;
 }
+
+
+@media (max-width: 320px) {
+  header{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+  }
+}

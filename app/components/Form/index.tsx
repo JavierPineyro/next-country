@@ -45,6 +45,7 @@ const SearchForm = () => {
           value={keyword}
           placeholder="Search for a country..."
           autoComplete="off"
+          required
           type="search"
           name="search"
           id="search"
@@ -64,6 +65,9 @@ const SearchForm = () => {
           </option>
         ))}
       </select>
+      <div className={styles.wrapperSubmit}>
+        <button className={styles.submit} type='submit'>Search</button>
+      </div>
     </form>
   )
 }

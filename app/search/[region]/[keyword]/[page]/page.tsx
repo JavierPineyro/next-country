@@ -46,10 +46,10 @@ const SearchPage = async ({
   const countries = await getData({ region, keyword, pageNumber })
 
   return (
-    <main className={styles.container}>
+    <>
       {/* @ts-expect-error Server Component */}
       {countries ? <ListOfCountries countries={countries} /> : 'none'}
-    </main>
+    </>
   )
 }
 

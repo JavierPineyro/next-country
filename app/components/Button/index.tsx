@@ -7,7 +7,7 @@ import styles from 'app/components/Button/Button.module.css'
 
 type Props = {
   label: string
-  toPage: string
+  toPage?: string
 }
 
 const handleClick = () => window.history.back()
@@ -19,7 +19,7 @@ function Button(props: Props) {
         {props.label}
       </button>
     ) : (
-      <Link className={styles.button} href={props.toPage}>
+      <Link className={styles.button} href={props.toPage || "/"}>
         {props.label}
       </Link>
     )

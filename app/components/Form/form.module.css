@@ -1,6 +1,7 @@
 .form{
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .textInput{
@@ -14,9 +15,73 @@
   outline: 1px solid #ccc;
 }
 
-.selectInput{
+.selectInput, .submit{
   padding: 10px;
   border-radius: 10px;
   min-width: 300px;
   border: none;
+}
+
+.wrapperSubmit{
+  visibility: hidden;
+  display: none;
+}
+
+.submit{
+  display: none;
+  visibility: hidden;
+  width: 100%;
+  background-color: var(--bg_color);
+  border: 1px solid #ccc
+}
+
+.submit:hover, .submit:active{
+  background-color: var(--color_elements)
+}
+
+.selectInput option[value="all"] {
+  color: #ccc;
+}
+
+@media (max-width: 700px) {
+  .form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .textInput, .selectInput, .submit{
+    font-size: 20px;
+    width: 100%;
+  }
+  .submit, .wrapperSubmit{
+    display: block;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 600px) {
+  .form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .textInput, .selectInput, .submit{
+    font-size: 20px;
+    width: 100%;
+  }
+  .submit, .wrapperSubmit{
+    display: block;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 320px) {
+  .textInput .selectInput{
+    width: 100%;
+    padding: 0px;
+  }
 }

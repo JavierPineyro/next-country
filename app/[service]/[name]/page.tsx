@@ -75,7 +75,8 @@ const CountryPage = async ({ params }: Props) => {
           {/** --------------------------------- */}
         </div>
         <div className={styles.borders}>
-          <span>Borders Countries: </span>
+          <span id="spanBorders">Borders Countries: </span>
+          <div>
           {!country.borders && '  none'}
           {country.borders?.map((codeCountry) => {
             return (
@@ -86,6 +87,7 @@ const CountryPage = async ({ params }: Props) => {
               />
             )
           })}
+          </div>
         </div>
       </div>
     </article>
