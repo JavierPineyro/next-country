@@ -12,6 +12,91 @@
   padding: 30px 0;
 }
 
+/* ---- THEME CLASSES ---- */
+.bodyDark {
+  background-color: var(--dark_bg);
+  color: var(--dark_text);
+}
+
+.bodyLight{
+  background-color: var(--light_bg);
+  color: var(--light_text);
+}
+
+.headerDark{
+  background-color: var(--dark_bg);
+  color: var(--dark_text);
+  padding: 10px 60px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.headerLight{
+  background-color: var(--light_bg);
+  color: var(--light_text);
+  padding: 10px 60px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.footerDark{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 0 0;
+  font-weight: lighter;
+
+  background-color: var(--dark_bg);
+  color: var(--dark_text);
+  padding: 10px 60px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+}
+
+.footerDark a {
+  margin: 0 0 0 2px;
+  font-weight: bold;
+}
+.footerDark a:hover {
+  text-decoration: underline;
+}
+
+.footerLight{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 0 0;
+  font-weight: lighter;
+
+  background-color: var(--light_bg);
+  color: var(--light_text);
+  padding: 10px 60px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+}
+
+.footerLight a {
+  margin: 0 0 0 2px;
+  font-weight: bold;
+}
+.footerLight a:hover {
+  text-decoration: underline;
+}
+
+/* --- --- --- */
+
 @media (max-width: 1000px){
   .container {
     max-width: 800px;

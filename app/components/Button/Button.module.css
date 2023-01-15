@@ -1,14 +1,24 @@
-.button,
-.back {
+.buttonDark,
+.backDark {
   padding: 0;
   margin: 0;
   outline: none;
   border: none;
 }
 
-.button,
-.back {
-  background-color: var(--color_main);
+.buttonLight,
+.backLight {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+}
+
+.buttonDark,
+.backDark {
+  font-weight: bold;
+  background-color: var(--dark-bg);
+  color: var(--dark_text);
   margin: 0 5px 0 0;
   border-radius: 6px;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
@@ -16,16 +26,44 @@
   -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
 }
 
-.button {
+.buttonLight,
+.backLight {
+  font-weight: bold;
+  background-color: var(--light-bg);
+  color: var(--light_text);
+  margin: 0 5px 0 0;
+  border-radius: 6px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+}
+
+.buttonDark {
   padding: 4px 20px;
 }
-.back {
+.backDark {
   padding: 10px 16px;
   font-size: 16px;
   font-weight: lighter;
 }
 
-.button:hover,
-.back:hover {
+.buttonLight {
+  padding: 4px 20px;
+}
+.backLight {
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.buttonDark:hover,
+.backDark:hover {
   background-color: rgb(55, 39, 91);
+  color: var(--dark_text);
+}
+
+.buttonLight:hover,
+.backLight:hover {
+  background-color: rgb(159, 138, 210);
+  color: var(--light_text);
 }

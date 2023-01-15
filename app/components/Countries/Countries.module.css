@@ -3,7 +3,6 @@
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   place-items: center;
   gap: 40px;
-  /* margin-top: 10px; */
 }
 
 .wrapper {
@@ -11,9 +10,9 @@
   padding: 0 10px 4px 10px;
 }
 
-.items {
+.itemsDark {
   display: flex;
-  background-color: var(--color_elements);
+  background-color: var(--dark_elements);
   flex-direction: column;
   /* box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.46); */
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
@@ -24,23 +23,55 @@
   padding: 0;
 }
 
-.items:hover {
+.itemsLight {
+  display: flex;
+  background-color: var(--light_elements);
+  flex-direction: column;
+  /* box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.46); */
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.itemsDark:hover {
   transition: all 0.3s ease-out;
   scale: 1.02;
 }
 
-.items header h3,
-.items header p {
+.itemsLight:hover {
+  transition: all 0.3s ease-out;
+  scale: 1.02;
+}
+
+.itemsDark header h3,
+.itemsDark header p {
+  margin: 0;
+}
+.itemsLight header h3,
+.itemsLight header p {
   margin: 0;
 }
 
-.items header h3 {
+.itemsDark header h3 {
   font-size: 18px;
   margin: 0 0 10px 0;
 }
 
-.items header p {
+.itemsDark header p {
   font-size: 14px;
+}
+
+.itemsLight header h3 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+}
+
+.itemsLight header p {
+  font-size: 14px;
+  font-weight: bolder;
 }
 
 .img {
@@ -62,12 +93,21 @@
     place-items: center;
     gap: 40px;
   }
-  .items header h3 {
+  .itemsDark header h3 {
     font-size: 22px;
     margin: 0 0 10px 0;
   }
 
-  .items header p {
+  .itemsDark header p {
+    font-size: 16px;
+  }
+
+  .itemsLight header h3 {
+    font-size: 22px;
+    margin: 0 0 10px 0;
+  }
+
+  .itemsLight header p {
     font-size: 16px;
   }
 }
@@ -78,12 +118,21 @@
     gap: 20px;
   }
 
-  .items header h3 {
+  .itemsDark header h3 {
     font-size: 22px;
     margin: 0 0 10px 0;
   }
 
-  .items header p {
+  .itemsDark header p {
+    font-size: 16px;
+  }
+
+  .itemsLight header h3 {
+    font-size: 22px;
+    margin: 0 0 10px 0;
+  }
+
+  .itemsLight header p {
     font-size: 16px;
   }
 }
