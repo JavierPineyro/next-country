@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { AnalyticsWrapper } from './components/Analytics/AnalyticsWrapper';
+
 import './globals.css'
 
 type LayoutProp = {
@@ -17,6 +19,7 @@ export default function RootLayout({ children }: LayoutProp) {
           <button title='Not implemented feature'>Theme</button>
         </header>
         {children}
+        <AnalyticsWrapper />
         <footer className="footer">
           by 
           <a title='Web App Github Repo' href='https://github.com/JavierPineyro/next-country'>
