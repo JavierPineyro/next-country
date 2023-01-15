@@ -1,8 +1,6 @@
 import React from 'react'
 import ListOfCountries from 'app/components/Countries/ListOfCountries'
 
-import styles from './page.module.css'
-
 import { capitalizeString, URLcountry } from 'utils'
 import { Service, Country } from 'types'
 

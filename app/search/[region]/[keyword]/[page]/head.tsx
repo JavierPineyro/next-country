@@ -2,11 +2,11 @@ export default function Head() {
 
   return (
     <>
-      <title>Country Info</title>
+      <title>Search country</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta
         name="description"
-        content='Information about this country'
+        content='A list of country you are looking for'
       />
       <link rel="icon" href="/favicon.ico" />
     </>
