@@ -1,4 +1,5 @@
-import { Service } from 'types'
+import { create } from 'zustand'
+import { ColorModeState, Service } from 'types'
 import type { Country } from 'types'
 
 export const URLcountry = 'https://restcountries.com/v2'
@@ -60,3 +61,9 @@ export const getCountryData = async (
     flag: data.flag,
   }
 }
+
+// Zustand to create Color Mode global state
+export const useDarkStore = create<ColorModeState>((set) => ({
+  darkMode: true,
+  toggleColorMode: () => set((state) => ({ darkMode: !state.darkMode }))
+}))
