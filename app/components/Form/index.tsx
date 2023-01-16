@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import styles from './form.module.css'
+import { useDarkStore } from 'utils'
 
 type ChangeEvent = {
   inputEvent: React.ChangeEvent<HTMLInputElement>
@@ -24,6 +25,7 @@ const SearchForm = () => {
   const [region, setRegion] = useState<string>('all')
 
   const router = useRouter()
+  const darkMode = useDarkStore(state => state.darkMode)
 
   const handleCountryChange = (evt: ChangeEvent['inputEvent']) => {
     setkeyword(evt.target.value)
@@ -40,7 +42,7 @@ const SearchForm = () => {
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
         <input
-          className={styles.textInput}
+          className={darkMode ? styles.textInputDark: styles.textInputLight }
           onChange={handleCountryChange}
           value={keyword}
           placeholder="Search for a country..."
@@ -52,7 +54,7 @@ const SearchForm = () => {
         />
               
       <select
-      className={styles.selectInput}
+        className={darkMode ? styles.selectInputDark: styles.selectInputLight}
         defaultValue={'all'}
         onChange={handleRegionChange}
         name="filter"

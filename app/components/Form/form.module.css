@@ -3,19 +3,53 @@
   justify-content: space-between;
   width: 100%;
 }
-
-.textInput{
+/*-----------------*/
+.textInputDark{
   padding: 10px;
   border-radius: 10px;
   min-width: 300px;
-  border: none;
+  border: 1px solid var(--dark_text);
+  background-color: var(--dark_elements);
+  color: var(--dark_text);
+}
+.textInputDark:focus{
+  background-color: var(--dark_bg);
+  outline: none;
+}
+.textInputDark::placeholder{
+  color: var(--light_color_input);
 }
 
-.textInput:focus{
-  outline: 1px solid #ccc;
+.textInputLight{
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 300px;
+  border: 1px solid var(--light_text);
+  background-color: var(--light_elements);;
+  color: var(--light_text);
+}
+.textInputLight:focus{
+  background-color: rgba(215, 214, 214, 0.213);
+  outline: none;
+}
+.textInputLight::placeholder{
+  color: var(--light_color_input);
+}
+/*-----------------*/
+
+
+.selectInputDark{
+  background-color: var(--dark_elements);
+  color: var(--dark_text);
+  outline: 1px solid var(--light_elements);
+}
+.selectInputLight{
+  background-color: var(--light_elements);
+  color: var(--light_text);
+  outline: 1px solid var(--dark_elements);
 }
 
-.selectInput, .submit{
+.selectInputDark, .selectInputLight, .submit{
   padding: 10px;
   border-radius: 10px;
   min-width: 300px;
@@ -31,16 +65,20 @@
   display: none;
   visibility: hidden;
   width: 100%;
-  background-color: var(--bg_color);
-  border: 1px solid #ccc
+  background-color: var(--dark_bg);
+  border: 1px solid var(--dark_text)
 }
 
 .submit:hover, .submit:active{
-  background-color: var(--color_elements)
+  background-color: var(--dark_elements)
 }
 
-.selectInput option[value="all"] {
-  color: #ccc;
+.selectInputDark option[value="all"] {
+  color: var(--dark_text);
+}
+
+.selectInputLight option[value="all"] {
+  color: var(--light_text);
 }
 
 @media (max-width: 700px) {
@@ -51,7 +89,10 @@
     max-width: 100%;
   }
 
-  .textInput, .selectInput, .submit{
+  .textInputDark, 
+  .textInputLight, 
+  .selectInputDark, 
+  .selectInputLight, .submit{
     font-size: 20px;
     width: 100%;
   }
@@ -69,7 +110,10 @@
     max-width: 100%;
   }
 
-  .textInput, .selectInput, .submit{
+  .textInputDark, 
+  .textInputLight, 
+  .selectInputDark,
+  .selectInputLight, .submit{
     font-size: 20px;
     width: 100%;
   }
@@ -80,7 +124,22 @@
 }
 
 @media (max-width: 320px) {
-  .textInput .selectInput{
+  .textInputDark .selectInputDark{
+    width: 100%;
+    padding: 0px;
+  }
+
+  .textInputLight .selectInputDark{
+    width: 100%;
+    padding: 0px;
+  }
+
+  .textInputDark .selectInputLight{
+    width: 100%;
+    padding: 0px;
+  }
+
+  .textInputLight .selectInputLight{
     width: 100%;
     padding: 0px;
   }
