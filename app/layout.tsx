@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import ThemeButton from './components/ThemeButton';
 import { useDarkStore } from 'utils';
 import { AnalyticsWrapper } from './components/Analytics/AnalyticsWrapper';
 
@@ -24,9 +25,11 @@ export default function RootLayout({ children }: LayoutProp) {
           <Link href="/">
             <h1>Where in the world?</h1>
           </Link>
-          <button onClick={toggleColorMode} title='Change theme'>
-            {darkMode? 'Light Mode': 'Dark Mode'}
-          </button>
+          <ThemeButton 
+            darkMode={darkMode} 
+            toggleColorMode={toggleColorMode} 
+            title='Change Theme'
+          />
         </header>
         {children}
         <AnalyticsWrapper />
