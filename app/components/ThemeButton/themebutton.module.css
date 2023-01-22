@@ -2,5 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+  border-radius: 50%;
   gap: 4px;
+  transition: background-color 0.3s ease-out;;
+}
+
+.button:hover{
+  background-color: rgba(181, 184, 188, 0.532);
 }

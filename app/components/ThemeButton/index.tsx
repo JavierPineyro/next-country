@@ -12,10 +12,9 @@ type Props = {
 
 export default function ThemeButton(props: Props) {
   return (
-    <button className={styles.button} 
+    <div className={styles.button} 
       onClick={props.toggleColorMode} title={props.title}>
         {props.darkMode ? <Sun />: <Moon />}
-        {/* {props.darkMode? 'Light Mode': 'Dark Mode'} */}
-    </button>
+    </div>
   )
 }
