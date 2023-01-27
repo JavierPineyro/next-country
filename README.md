@@ -21,3 +21,5 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 ## Next Features
 
 * Add Pagination to home page and search page
+* Add No Results components
+* Save color mode state in Localstorage
