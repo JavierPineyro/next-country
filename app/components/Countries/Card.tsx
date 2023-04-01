@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
 
 import styles from './Countries.module.css'
 
@@ -13,18 +12,17 @@ type Props = {
 }
 
 function Card({ country }: Props) {
-
-  const darkMode = useDarkStore(state => state.darkMode)
+  const darkMode = useDarkStore((state) => state.darkMode)
 
   return (
     <article className={darkMode ? styles.itemsDark : styles.itemsLight}>
-      <Image
+      <img
         className={styles.img}
         src={country.flag}
         alt={`${country.name}'s flag`}
         width={20}
         height={15}
-        loading='lazy'
+        loading="lazy"
       />
       <header className={styles.wrapper}>
         <h3>{country.name}</h3>

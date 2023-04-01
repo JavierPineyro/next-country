@@ -25,7 +25,7 @@ const SearchForm = () => {
   const [region, setRegion] = useState<string>('all')
 
   const router = useRouter()
-  const darkMode = useDarkStore(state => state.darkMode)
+  const darkMode = useDarkStore((state) => state.darkMode)
 
   const handleCountryChange = (evt: ChangeEvent['inputEvent']) => {
     setkeyword(evt.target.value)
@@ -35,30 +35,35 @@ const SearchForm = () => {
   }
   const handleSubmit = (evt: ChangeEvent['submitInput']) => {
     evt.preventDefault()
+
+    if (keyword === '') {
+      router.push(`/all/${region}`)
+    }
     const URL = `/search/${region}/${keyword}/0`
     router.push(URL)
   }
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-        <input
-          className={darkMode ? styles.textInputDark: styles.textInputLight }
-          onChange={handleCountryChange}
-          value={keyword}
-          placeholder="Search for a country..."
-          autoComplete="off"
-          required
-          type="search"
-          name="search"
-          id="search"
-        />
-              
+      <input
+        className={darkMode ? styles.textInputDark : styles.textInputLight}
+        onChange={handleCountryChange}
+        value={keyword}
+        placeholder="Search for a country..."
+        autoComplete="off"
+        type="search"
+        name="search"
+        id="search"
+        tabIndex={0}
+      />
+
       <select
-        className={darkMode ? styles.selectInputDark: styles.selectInputLight}
+        className={darkMode ? styles.selectInputDark : styles.selectInputLight}
         defaultValue={'all'}
         onChange={handleRegionChange}
         name="filter"
         id="filter"
+        tabIndex={1}
       >
         <option value="all">Filter by region...</option>
         {regions.map((region, index) => (
@@ -68,7 +73,9 @@ const SearchForm = () => {
         ))}
       </select>
       <div className={styles.wrapperSubmit}>
-        <button className={styles.submit} type='submit'>Search</button>
+        <button className={styles.submit} type="submit">
+          Search
+        </button>
       </div>
     </form>
   )

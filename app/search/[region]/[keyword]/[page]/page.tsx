@@ -1,5 +1,6 @@
 import React from 'react'
 import ListOfCountries from 'app/components/Countries/ListOfCountries'
+import NoResults from 'app/components/NoResults/index'
 
 import { capitalizeString, URLcountry } from 'utils'
 import { Service, Country } from 'types'
@@ -46,7 +47,11 @@ const SearchPage = async ({
   return (
     <>
       {/* @ts-expect-error Server Component */}
-      {countries ? <ListOfCountries countries={countries} /> : 'none'}
+      {countries ? (
+        <ListOfCountries countries={countries} />
+      ) : (
+        <NoResults>No Results</NoResults>
+      )}
     </>
   )
 }

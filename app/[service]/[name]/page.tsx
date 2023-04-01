@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import Button from 'app/components/Button'
 
 import { Service } from 'types'
@@ -22,11 +21,10 @@ const CountryPage = async ({ params }: Props) => {
   return (
     <article className={styles.article}>
       <div className={styles.wrap}>
-        <Image
+        <img
           className={styles.img}
           width={20}
           height={15}
-          priority={true}
           src={country.flag}
           alt={`${country.name} flag`}
         />
@@ -77,16 +75,16 @@ const CountryPage = async ({ params }: Props) => {
         <div className={styles.borders}>
           <span id="spanBorders">Borders Countries: </span>
           <div>
-          {!country.borders && '  none'}
-          {country.borders?.map((codeCountry) => {
-            return (
-              <Button
-                key={codeCountry}
-                toPage={`/${codeService}/${codeCountry}`}
-                label={`${codeCountry} ↗︎`}
-              />
-            )
-          })}
+            {!country.borders && '  none'}
+            {country.borders?.map((codeCountry) => {
+              return (
+                <Button
+                  key={codeCountry}
+                  toPage={`/${codeService}/${codeCountry}`}
+                  label={`${codeCountry} ↗︎`}
+                />
+              )
+            })}
           </div>
         </div>
       </div>

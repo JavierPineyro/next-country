@@ -11,7 +11,7 @@ export default function RootLayout({ children }: LayoutProp) {
       <div className={styles.divForm}>
         <SearchForm />
       </div>
-      <main>{children}</main>
+      <section>{children}</section>
     </main>
   )
 }

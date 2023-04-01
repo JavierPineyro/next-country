@@ -10,6 +10,8 @@ import type { RawCountry, CountryHomePage } from 'types'
 
 type Props = {
   countries: Array<Country> | undefined
+  searchAll?: boolean
+  filter?: string
 }
 type SectionProps = {
   data: Country[] | CountryHomePage[]
@@ -20,7 +22,6 @@ async function getData(): Promise<Array<CountryHomePage>> {
   const serviceFetch = Service.All
   const response = await fetch(`${URLcountry}/${serviceFetch}`)
   const responseToJson: Array<RawCountry> = await response.json()
-
   return responseToJson.map((country) => {
     return {
       name: country.name,
@@ -38,13 +39,18 @@ async function getData(): Promise<Array<CountryHomePage>> {
 
 function Section({ data, service }: SectionProps) {
   return (
-    <section className={styles.content}>
-      {data.map((country) => (
-        <Link href={`/${service}/${country.name}`} key={country.name}>
-          <Card country={country} />
-        </Link>
-      ))}
-    </section>
+    <>
+      <section className={styles.content}>
+        {data.map((country) => (
+          <Link href={`/${service}/${country.name}`} key={country.name}>
+            <Card country={country} />
+          </Link>
+        ))}
+      </section>
+      <p style={{ width: '100%', textAlign: 'center', fontSize: '26px' }}>
+        Usa el buscador para los países que quieras!
+      </p>
+    </>
   )
 }
 
@@ -55,6 +61,15 @@ export default async function ListOfCountries(props: Props) {
     return <Section data={props.countries} service={service} />
   }
 
-  const data = await getData()
+  // Para /all/[region]
+  const rawData = await getData()
+  if (props.searchAll && props.filter) {
+    const filterData = rawData.filter(
+      (country) => country.region === props.filter
+    )
+    return <Section data={filterData} service={service} />
+  }
+
+  const data = rawData.slice(0, 39)
   return <Section data={data} service={service} />
 }
