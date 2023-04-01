@@ -47,11 +47,9 @@ const SearchPage = async ({
   return (
     <>
       {/* @ts-expect-error Server Component */}
-      {countries ? (
-        <ListOfCountries countries={countries} />
-      ) : (
-        <NoResults>No Results</NoResults>
-      )}
+      {countries && <ListOfCountries countries={countries} />}
+
+      {!countries && <NoResults>No Results</NoResults>}
     </>
   )
 }
